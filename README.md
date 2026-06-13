@@ -1,4 +1,4 @@
-# AI Chatbot
+# Python Based AI Chatbot
 
 A simple command-line chatbot built with Python and the OpenAI API.
 
