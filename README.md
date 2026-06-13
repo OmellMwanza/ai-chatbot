@@ -68,6 +68,5 @@ If you see an error like `NameError: name 'key' is not defined`, update `main.py
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 ```
 
-Make sure the duplicate client setup that references `key` is removed.
 
 If you see an authentication error, confirm that `OPENAI_API_KEY` is set correctly before running `python main.py`.
