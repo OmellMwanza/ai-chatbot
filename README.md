@@ -7,6 +7,7 @@ A simple command-line chatbot built with Python and the OpenAI API.
 - Python 3.10 or newer
 - An OpenAI API key
 - The OpenAI Python package
+- The `python-dotenv` package
 
 ## Setup
 
@@ -17,24 +18,36 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-2. Install the OpenAI package:
+2. Install the required packages:
 
 ```powershell
-pip install openai
+pip install openai python-dotenv
 ```
 
-3. Create a `.env` file or set your API key in the terminal.
+3. Create a `.env` file in the project folder:
+
+```env
+OPENAI_API_KEY=your_api_key_here
+```
+
+4. Load the `.env` file in `main.py` before creating the OpenAI client:
+
+```python
+import os
+from dotenv import load_dotenv
+from openai import OpenAI
+
+load_dotenv()
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+```
+
+You can also set your API key directly in the terminal instead of using `.env`.
 
 To set it for the current PowerShell session:
 
 ```powershell
 $env:OPENAI_API_KEY="your_api_key_here"
-```
-
-If you use a `.env` file, add:
-
-```env
-OPENAI_API_KEY=your_api_key_here
 ```
 
 ## Run The Chatbot

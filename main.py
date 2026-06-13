@@ -1,13 +1,13 @@
 import os
+from dotenv import load_dotenv
 from openai import OpenAI
-
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+load_dotenv()  # Load environment variables from .env file
 
 messages = []
 
 client = OpenAI(
     # This is the default and can be omitted
-    api_key=key,
+    api_key=os.getenv("OPENAI_API_KEY"),
 )
 
 def completion(message):
