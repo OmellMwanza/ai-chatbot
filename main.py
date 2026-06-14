@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
-load_dotenv()  # Load environment variables from .env file
+load_dotenv()  # Load environment variables from .env file.
 
 messages = []
 
